@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/q">
+        <file>data/sample.tcx</file>
+    </qresource>
+</RCC>
