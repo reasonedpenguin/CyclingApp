@@ -7,13 +7,14 @@
 
 #include <QStringList>
 #include "ActivityListModel.h"
+#include "ActivityDB.h"
+#include "ActivityItem.h"
 
-
-ActivityListModel::ActivityListModel(const QString &data,QObject* parent) : QAbstractItemModel(parent) {
+ActivityListModel::ActivityListModel(QObject* parent) : QAbstractItemModel(parent) {
     QList<QVariant> rootData;
     rootData << "Title" << "Summary";
     rootItem = new TreeItem(rootData);
-    setupModelData(data.split(QString("\n")), rootItem);
+    setupModelData(rootItem);
 }
 
 ActivityListModel::~ActivityListModel() {
@@ -97,6 +98,33 @@ int ActivityListModel::columnCount(const QModelIndex& parent) const {
         return rootItem->columnCount();
 }
 
-void ActivityListModel::setupModelData(const QStringList& lines,TreeItem* parent) {
+void ActivityListModel::setupModelData(TreeItem* parentItem) {
+    m_db = new ActivityDB();
+    QList<Activity> activityList = m_db->getAllActivities();
+    Activity test1,test2;
+    test1.setName("Test1");
+    test2.setName("Test2");
+    activityList.push_back(test1);
+    activityList.push_back(test2);
+    for(int i=0;i<activityList.size();i++) {
+        TreeItem * childItem = new ActivityItem(activityList.value(i));
+        parentItem->appendChild(childItem);
+    }
 
 }
+
+void ActivityListModel::addActivity(Activity a,const QModelIndex &parent) {
+    TreeItem *parentItem = static_cast<TreeItem*>(parent.internalPointer());
+    if(!parentItem) parentItem = rootItem;
+    int64_t id = m_db->addActivity(a);
+    if(id >= 0) {
+        int currentCount = rowCount(parent);
+        beginInsertRows(parent,currentCount,currentCount);
+        a.setId(id);
+        TreeItem * childItem = new ActivityItem(a);
+        parentItem->appendChild(childItem);
+        endInsertRows();
+    }
+}
+
+

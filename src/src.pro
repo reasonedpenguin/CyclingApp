@@ -8,34 +8,40 @@ include(../common.pri)
 QT += core gui
 greaterThan(QT_MAJOR_VERSION,4): QT += widgets printsupport
 
-CONFIG += static
+#CONFIG += static
 TARGET = cyclingapp
 TEMPLATE = lib
 
 DEFINES += SRC_LIBRARY
 
 SOURCES += \
-    IDataSource.cpp \
-    TcxDataSource.cpp \
     Activity.cpp \
-    Lap.cpp \
-    Trackpoint.cpp \
-    GpsPosition.cpp \
-    qcustomplot.cpp \
+    ActivityDB.cpp \
+    ActivityItem.cpp \
     ActivityListModel.cpp \
-    TreeItem.cpp
+    GpsPosition.cpp \
+    IDataSource.cpp \
+    Lap.cpp \
+    TcxDataSource.cpp \
+    Trackpoint.cpp \
+    TreeItem.cpp \
+    qcustomplot.cpp \
+    #
 
 HEADERS +=\
-        src_global.h \
-    IDataSource.h \
-    TcxDataSource.h \
     Activity.h \
-    Lap.h \
-    Trackpoint.h \
+    ActivityDB.h \
+    ActivityItem.h \
+    ActivityListModel.h \
+    src_global.h \
     GpsPosition.h \
+    IDataSource.h \
+    Lap.h \
+    TcxDataSource.h \
+    Trackpoint.h \
     qcustomplot.h \
-    ActivityListModel.h
-
+    #
+    
 unix {
     target.path = /usr/lib
     INSTALLS += target

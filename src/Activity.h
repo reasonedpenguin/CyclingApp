@@ -13,8 +13,11 @@ public:
 
     bool isNull();
 
-    QString id() const;
-    void setId(const QString &id);
+    int64_t id() const;
+    void setId(int64_t id);
+
+    QString name() const;
+    void setName(const QString &id);
 
     QString creator() const;
     void setCreator(const QString &creator);
@@ -47,13 +50,17 @@ public:
     void setLaps(const QVector<Lap> &laps);
 
 
+    QString dataFile() const;
+    void setDataFile(const QString &dataFile);
 
 
 
 private:
-    QString m_id;
+    int64_t m_id;
+    QString m_name;
     QString m_creator;
     QString m_sport;
+    QString m_dataFile;
     double m_totalTime;
     double m_distance;
     double m_maxSpeed;

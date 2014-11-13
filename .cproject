@@ -4,7 +4,7 @@
 <cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
 	<storageModule moduleId="org.eclipse.cdt.core.settings">
 		<cconfiguration id="0.1853174417">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1853174417" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1853174417" moduleId="org.eclipse.cdt.core.settings" name="qt5">
 				<externalSettings/>
 				<extensions>
 					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
@@ -16,7 +16,7 @@
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="CyclingApp" buildProperties="" description="" id="0.1853174417" name="Debug" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+				<configuration artifactName="CyclingApp" buildProperties="" description="" id="0.1853174417" name="qt5" parent="org.eclipse.cdt.build.core.prefbase.cfg">
 					<folderInfo id="0.1853174417." name="/" resourcePath="">
 						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.924619604" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
 							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.924619604.461562109" name=""/>
@@ -24,36 +24,78 @@
 							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.396525188" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1803331492" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.346312710" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtCore"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtGui"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtNetwork"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtXml"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtWebKit"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtSql"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.756380016" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1024571821" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1535633093" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtCore"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtGui"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtNetwork"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtXml"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtWebKit"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtSql"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtNetwork"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtXml"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtSql"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtWebKit"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1097206104" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 							<tool id="org.eclipse.cdt.build.core.settings.holder.1474220887" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
 								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.85898487" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtCore"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtGui"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtNetwork"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtXml"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtWebKit"/>
-									<listOptionValue builtIn="false" value="/usr/include/qt4/QtSql"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
 								</option>
 								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.495197975" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+						</toolChain>
+					</folderInfo>
+				</configuration>
+			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+		</cconfiguration>
+		<cconfiguration id="0.1853174417.1726008844">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1853174417.1726008844" moduleId="org.eclipse.cdt.core.settings" name="qt4">
+				<externalSettings/>
+				<extensions>
+					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+				</extensions>
+			</storageModule>
+			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+				<configuration artifactName="CyclingApp" buildProperties="" description="" id="0.1853174417.1726008844" name="qt4" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+					<folderInfo id="0.1853174417.1726008844." name="/" resourcePath="">
+						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.489610291" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
+							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.489610291.998684726" name=""/>
+							<builder buildPath="/home/hornja/workspace/build-CyclingApp-Desktop_Qt_4_GCC_64bit-Debug" id="org.eclipse.cdt.build.core.settings.default.builder.1080170309" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.1246426549" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1674241467" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1216364918" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.348933084" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1383648102" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.776117370" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtNetwork"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtXml"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtSql"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtWebKit"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.336526051" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+							</tool>
+							<tool id="org.eclipse.cdt.build.core.settings.holder.1411485374" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
+								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.557181100" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
+									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
+								</option>
+								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1091444218" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -65,19 +107,25 @@
 	<storageModule moduleId="cdtBuildSystem" version="4.0.0">
 		<project id="CyclingApp.null.1256292285" name="CyclingApp"/>
 	</storageModule>
-	<storageModule moduleId="scannerConfiguration">
-		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		<scannerConfigBuildInfo instanceId="0.1853174417">
-			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
-		</scannerConfigBuildInfo>
-	</storageModule>
 	<storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
 	<storageModule moduleId="refreshScope" versionNumber="2">
+		<configuration configurationName="qt4">
+			<resource resourceType="PROJECT" workspacePath="/CyclingApp"/>
+		</configuration>
 		<configuration configurationName="Default">
 			<resource resourceType="PROJECT" workspacePath="/CyclingApp"/>
 		</configuration>
 		<configuration configurationName="Debug">
 			<resource resourceType="PROJECT" workspacePath="/CyclingApp"/>
 		</configuration>
+	</storageModule>
+	<storageModule moduleId="scannerConfiguration">
+		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.1853174417.1726008844">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.1853174417">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
 </cproject>

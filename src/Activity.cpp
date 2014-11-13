@@ -2,23 +2,32 @@
 #include <math.h>
 
 
-Activity::Activity()
+Activity::Activity() :
+    m_id(-1)
 {
 }
 
 bool Activity::isNull()
 {
-    return m_id.isNull();
+    return m_name.isNull();
 }
 
-QString Activity::id() const
-{
+int64_t Activity::id() const {
     return m_id;
 }
 
-void Activity::setId(const QString &id)
-{
+void Activity::setId(int64_t id) {
     m_id = id;
+}
+
+QString Activity::name() const
+{
+    return m_name;
+}
+
+void Activity::setName(const QString &nameStr)
+{
+    m_name = nameStr;
 }
 
 
@@ -142,14 +151,11 @@ void Activity::setSport(const QString &sport)
     m_sport = sport;
 }
 
+QString Activity::dataFile() const {
+    return m_dataFile;
+}
 
 
-
-
-
-
-
-
-
-
-
+void Activity::setDataFile(const QString& dataFile) {
+    m_dataFile = dataFile;
+}

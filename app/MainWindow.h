@@ -11,6 +11,7 @@
 #include <QMainWindow>
 
 class QFileDialog;
+class ActivityListModel;
 
 namespace Ui {
 class MainWindowBase;
@@ -28,6 +29,7 @@ public slots:
 private:
     Ui::MainWindowBase* ui;
     QFileDialog* m_fileDialog;
+    ActivityListModel* m_activityModel;
 };
 
 #endif /* MAINWINDOW_H_ */

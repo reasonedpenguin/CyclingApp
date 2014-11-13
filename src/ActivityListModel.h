@@ -8,12 +8,18 @@
 #ifndef ACTIVITYLISTMODEL_H_
 #define ACTIVITYLISTMODEL_H_
 
+#include <QModelIndex>
 #include <QAbstractItemModel>
 #include "TreeItem.h"
+#include "Activity.h"
+
+
+class ActivityDB;
+
 
 class ActivityListModel : public QAbstractItemModel {
 public:
-    ActivityListModel(const QString &data,QObject *parent);
+    ActivityListModel(QObject *parent = NULL);
     virtual ~ActivityListModel();
 
     QVariant data(const QModelIndex &index, int role) const;
@@ -30,10 +36,12 @@ public:
 
     int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
+    void addActivity(Activity a,const QModelIndex &parent = QModelIndex());
 private:
-    void setupModelData(const QStringList &lines, TreeItem *parent);
+    void setupModelData( TreeItem *parent);
 
     TreeItem *rootItem;
+    ActivityDB* m_db;
 };
 
 #endif /* ACTIVITYLISTMODEL_H_ */

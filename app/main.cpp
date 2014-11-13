@@ -1,7 +1,7 @@
-#include "qtquick2controlsapplicationviewer.h"
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
-#include <QQuickWindow>
+//#include "qtquick2controlsapplicationviewer.h"
+//#include <QGuiApplication>
+//#include <QQmlApplicationEngine>
+//#include <QQuickWindow>
 
 #include <QApplication>
 #include <QUrl>
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
 
     QApplication app(argc,argv);
     app.setApplicationName("CyclingApp");
-    app.setOrganizationName("Company Corp.");
+    app.setOrganizationName("CyclingApp");
 //    app.setOrganizationDomain("company.net");
 
     MainWindow mainWindow;

@@ -19,10 +19,9 @@ Activity TcxDataSource::getActivityFromFile(const QString& filename)
 
     QFile file(filename);
     if (!file.open(QFile::ReadOnly | QFile::Text)) {
-        m_errorMsg = tr("Cannot read file %1:\n%2.")
+        qWarning() << tr("Cannot read file %1:\n%2.")
                              .arg(filename)
                              .arg(file.errorString());
-        qDebug() << m_errorMsg;
         return activity;
     }
 
@@ -36,19 +35,19 @@ Activity TcxDataSource::getActivityFromFile(const QString& filename)
 
     if (!domDocument.setContent(&file, true, &errorStr, &errorLine,
                                 &errorColumn)) {
-        m_errorMsg = tr("Parse error at line %1, column %2:\n%3")
+        qWarning() << tr("Parse error at line %1, column %2:\n%3")
                                  .arg(errorLine)
                                  .arg(errorColumn)
                                  .arg(errorStr);
-        qDebug() << m_errorMsg;
+
         return activity;
     }
 
 
     QDomElement root = domDocument.documentElement();
     if (root.tagName() != "TrainingCenterDatabase") {
-        m_errorMsg = tr("The file is not an TCX file.");
-        qDebug() << m_errorMsg;
+        qWarning() <<  tr("The file is not an TCX file.");
+
         return activity;
     }
 
@@ -74,7 +73,7 @@ Activity TcxDataSource::parseActivityElement(QDomElement activityElement)
     QDomElement element = activityElement.firstChildElement();
     while(!element.isNull()) {
         if(element.tagName() == QString("Id")) {
-            activity.setId(element.text().trimmed());
+            activity.setName(element.text().trimmed());
         } else if(element.tagName() == QString("Creator")) {
             QString creator = element.firstChildElement("Name").text().trimmed();
             activity.setCreator(creator);

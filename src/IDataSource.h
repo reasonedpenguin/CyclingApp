@@ -10,15 +10,14 @@ class Activity;
 class SRCSHARED_EXPORT IDataSource : public QObject
 {
     Q_OBJECT
-protected:
-    IDataSource();
 
 public:
-    virtual Activity getActivityFromFile(const QString& filename) = 0;
-    virtual QString getErrorMsg();
+    static Activity loadActivity(const QString& filename);
 
 protected:
-    QString m_errorMsg;
+    IDataSource();
+    virtual Activity getActivityFromFile(const QString& filename) = 0;
+
 };
 
 #endif // SRC_H

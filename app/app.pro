@@ -26,8 +26,8 @@ LIBS += -L../src -lcyclingapp
 # target.path =
 
 # Please do not modify the following two lines. Required for deployment.
-include(qtquick2controlsapplicationviewer/qtquick2controlsapplicationviewer.pri)
-qtcAddDeployment()
+#include(qtquick2controlsapplicationviewer/qtquick2controlsapplicationviewer.pri)
+#qtcAddDeployment()
 
 RESOURCES += \
     app.qrc

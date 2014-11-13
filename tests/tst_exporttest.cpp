@@ -3,29 +3,23 @@
 #include "TcxDataSource.h"
 #include "Activity.h"
 
-class ImportTest : public QObject
+class ExportTest : public QObject
 {
     Q_OBJECT
 
 public:
-    ImportTest();
+    ExportTest();
 
 private Q_SLOTS:
-    void verifySchema();
     void verifyActivity();
 };
 
-ImportTest::ImportTest()
+ExportTest::ExportTest()
 {
 }
 
-void ImportTest::verifySchema()
-{
-    TcxDataSource tds;
-    //QVERIFY2(tds.isValid(":/q/data/sample.tcx"),"Error checking schema");
-}
 
-void ImportTest::verifyActivity()
+void ExportTest::verifyActivity()
 {
     TcxDataSource tds;
     Activity activity = tds.getActivityFromFile(":/q/data/sample.tcx");
@@ -44,6 +38,6 @@ void ImportTest::verifyActivity()
     QCOMPARE(activity.laps()[0].trackpoints().size(), 61);
 }
 
-QTEST_APPLESS_MAIN(ImportTest)
+QTEST_APPLESS_MAIN(ExportTest)
 
-#include "tst_importtest.moc"
+#include "tst_ExportTest.moc"

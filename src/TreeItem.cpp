@@ -9,6 +9,12 @@
 #include <QtAlgorithms>
 
 
+TreeItem::TreeItem(TreeItem* parent) :
+parentItem(parent)
+{
+
+}
+
 TreeItem::TreeItem(const QList<QVariant>& data, TreeItem* parent) :
     parentItem(parent),
     itemData(data)
@@ -21,6 +27,8 @@ TreeItem::~TreeItem() {
 }
 
 void TreeItem::appendChild(TreeItem* child) {
+    if(!child) return;
+    child->parentItem = this;
     childItems.append(child);
 }
 
@@ -46,6 +54,15 @@ int TreeItem::row() const {
 
     return 0;
 }
+
+void TreeItem::setData(int column, QVariant newData) {
+    while(itemData.count() <= column) {
+        itemData.push_back(QVariant());
+    }
+    itemData.replace(column,newData);
+}
+
+
 
 TreeItem* TreeItem::parent() {
     return parentItem;

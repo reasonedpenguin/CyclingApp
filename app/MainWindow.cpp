@@ -5,10 +5,14 @@
  *      Author: hornja
  */
 
-#include <QtGlobal>
+#include <QtDebug>
 #include <QFileDialog>
-#include <QStandardPaths>
+//#include <QStandardPaths>
+#include <QDesktopServices>
 #include "MainWindow.h"
+#include "ActivityListModel.h"
+#include "IDataSource.h"
+
 #include "ui_MainWindowBase.h"
 
 MainWindow::MainWindow() : QMainWindow(),
@@ -19,9 +23,13 @@ MainWindow::MainWindow() : QMainWindow(),
 
     connect(ui->actionImport, SIGNAL(triggered()),this,SLOT(importTriggered()));
 
-    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
-    //for(int i=0;i<dataDir.size();i++)
-        qDebug("Data directory: %s", dataDir.data());
+    m_activityModel = new ActivityListModel();
+    ui->activityView->setModel(m_activityModel);
+//    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
+//    qDebug("Data directory: %s", dataDir.data());
+
+
+
 }
 
 MainWindow::~MainWindow() {
@@ -32,9 +40,15 @@ void MainWindow::importTriggered() {
     if(!m_fileDialog) {
         m_fileDialog = new QFileDialog(this,"Open GPS Activity file");
         m_fileDialog->setNameFilter("GPS Activities (*.tcx *.fit)");
+        m_fileDialog->setFileMode(QFileDialog::ExistingFiles);
     }
     if (m_fileDialog->exec()) {
         QStringList fileNames = m_fileDialog->selectedFiles();
-
+        for(int i=0;i<fileNames.size();i++) {
+            qDebug() << "Loading: " << fileNames[i];
+            Activity a = IDataSource::loadActivity(fileNames[i]);
+            if(!a.isNull())
+                m_activityModel->addActivity(a);
+        }
     }
 }
