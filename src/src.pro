@@ -23,6 +23,7 @@ SOURCES += \
     IDataSource.cpp \
     Lap.cpp \
     TcxDataSource.cpp \
+    TcxWriter.cpp \
     Trackpoint.cpp \
     TreeItem.cpp \
     qcustomplot.cpp \
@@ -38,6 +39,7 @@ HEADERS +=\
     IDataSource.h \
     Lap.h \
     TcxDataSource.h \
+    TcxWriter.h \
     Trackpoint.h \
     qcustomplot.h \
     #

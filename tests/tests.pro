@@ -9,7 +9,7 @@ QT       += testlib
 
 QT       -= gui
 
-TARGET = tst_importtest
+TARGET = cyclingapp_unittests
 CONFIG   += console
 CONFIG   -= app_bundle
 
@@ -17,8 +17,17 @@ LIBS += -L../src -lcyclingapp
 
 TEMPLATE = app
 
+HEADERS += \
+    tst_importtest.h \
+    tst_exporttest.h \
+    #
+    
+SOURCES += \
+    tst_importtest.cpp \
+    tst_exporttest.cpp \
+    main.cpp \
+    #
 
-SOURCES += tst_importtest.cpp
 DEFINES += SRCDIR=\\\"$$PWD/\\\"
 
 RESOURCES += \

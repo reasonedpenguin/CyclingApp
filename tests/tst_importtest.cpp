@@ -1,19 +1,9 @@
 #include <QString>
-#include <QtTest>
+#include "tst_importtest.h"
 #include "TcxDataSource.h"
 #include "Activity.h"
 
-class ImportTest : public QObject
-{
-    Q_OBJECT
 
-public:
-    ImportTest();
-
-private Q_SLOTS:
-    void verifySchema();
-    void verifyActivity();
-};
 
 ImportTest::ImportTest()
 {
@@ -44,6 +34,3 @@ void ImportTest::verifyActivity()
     QCOMPARE(activity.laps()[0].trackpoints().size(), 61);
 }
 
-QTEST_APPLESS_MAIN(ImportTest)
-
-#include "tst_importtest.moc"

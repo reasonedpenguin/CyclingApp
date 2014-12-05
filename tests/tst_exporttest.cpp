@@ -1,28 +1,26 @@
 #include <QString>
-#include <QtTest>
+#include "tst_exporttest.h"
 #include "TcxDataSource.h"
 #include "Activity.h"
+#include "TcxWriter.h"
 
-class ExportTest : public QObject
-{
-    Q_OBJECT
-
-public:
-    ExportTest();
-
-private Q_SLOTS:
-    void verifyActivity();
-};
 
 ExportTest::ExportTest()
 {
 }
 
 
-void ExportTest::verifyActivity()
+void ExportTest::exportActivity()
 {
     TcxDataSource tds;
-    Activity activity = tds.getActivityFromFile(":/q/data/sample.tcx");
+    Activity inputActivity = tds.getActivityFromFile(":/q/data/sample.tcx");
+
+    TcxWriter tw;
+    QString tmpFile = "/tmp/sample.tcx";
+    tw.save(inputActivity, tmpFile);
+
+    Activity activity = tds.getActivityFromFile(tmpFile);
+
     QVERIFY2(!activity.isNull(), "Unable to parse file");
 
     QCOMPARE(activity.name(),QString("2012-10-14T10:02:42.000Z"));
@@ -37,7 +35,3 @@ void ExportTest::verifyActivity()
     QCOMPARE(activity.laps().size(), 11);
     QCOMPARE(activity.laps()[0].trackpoints().size(), 61);
 }
-
-QTEST_APPLESS_MAIN(ExportTest)
-
-#include "tst_ExportTest.moc"
