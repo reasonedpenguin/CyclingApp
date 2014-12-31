@@ -11,7 +11,9 @@ add_definitions(${QT_DEFINITIONS})
 
 
 include_directories("${PROJECT_SOURCE_DIR}/gpsdata")
+include_directories("${PROJECT_SOURCE_DIR}/widgets")
 
 add_subdirectory(CyclingApp)
 add_subdirectory(gpsdata)
+add_subdirectory(widgets)
 add_subdirectory(tests) 

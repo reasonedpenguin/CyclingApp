@@ -10,8 +10,7 @@ SET(gpsdata_SOURCES  Activity.cpp
     TcxDataSource.cpp
     TcxWriter.cpp
     Trackpoint.cpp
-    TreeItem.cpp
-    qcustomplot.cpp)
+    TreeItem.cpp)
     
 SET(gpsdata_HEADERS Activity.h
     ActivityDB.h
@@ -22,8 +21,7 @@ SET(gpsdata_HEADERS Activity.h
     Lap.h
     TcxDataSource.h
     TcxWriter.h
-    Trackpoint.h
-    qcustomplot.h)
+    Trackpoint.h)
     
 
 
