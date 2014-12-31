@@ -1,4 +1,4 @@
-#include "Lap.h"
+#include "../gpsdata/Lap.h"
 
 Lap::Lap()
 {

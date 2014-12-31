@@ -5,7 +5,8 @@
 
 #include <QApplication>
 #include <QUrl>
-#include "MainWindow.h"
+
+#include "../CyclingApp/MainWindow.h"
 
 
 int main(int argc, char *argv[])

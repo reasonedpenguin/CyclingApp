@@ -1,4 +1,4 @@
-#include "Trackpoint.h"
+#include "../gpsdata/Trackpoint.h"
 
 Trackpoint::Trackpoint()
 {

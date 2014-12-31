@@ -15,4 +15,4 @@ ADD_EXECUTABLE(CyclingAppTests ${tests_SOURCES}
     ${tests_FORMS_HEADERS} 
     ${tests_RESOURCES_RCC})
     
-TARGET_LINK_LIBRARIES(CyclingAppTests src ${QT_LIBRARIES})
+TARGET_LINK_LIBRARIES(CyclingAppTests gpsdata ${QT_LIBRARIES})

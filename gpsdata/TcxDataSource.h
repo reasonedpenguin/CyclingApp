@@ -3,10 +3,11 @@
 
 #include <QString>
 #include <QDomElement>
-#include "Activity.h"
-#include "Lap.h"
-#include "Trackpoint.h"
-#include "IDataSource.h"
+
+#include "../gpsdata/Activity.h"
+#include "../gpsdata/IDataSource.h"
+#include "../gpsdata/Lap.h"
+#include "../gpsdata/Trackpoint.h"
 
 class TcxDataSource : public IDataSource
 {

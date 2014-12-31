@@ -8,8 +8,8 @@
 #ifndef ACTIVITYITEM_H_
 #define ACTIVITYITEM_H_
 
-#include "TreeItem.h"
-#include "Activity.h"
+#include "../gpsdata/Activity.h"
+#include "../gpsdata/TreeItem.h"
 
 class ActivityItem: public TreeItem {
 public:

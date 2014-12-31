@@ -1,4 +1,5 @@
-#include "Activity.h"
+#include "../gpsdata/Activity.h"
+
 #include <math.h>
 
 

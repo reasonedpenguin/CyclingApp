@@ -10,8 +10,8 @@ include(${QT_USE_FILE})
 add_definitions(${QT_DEFINITIONS})
 
 
-include_directories("${PROJECT_SOURCE_DIR}/src")
+include_directories("${PROJECT_SOURCE_DIR}/gpsdata")
 
-add_subdirectory(app)
-add_subdirectory(src)
+add_subdirectory(CyclingApp)
+add_subdirectory(gpsdata)
 add_subdirectory(tests) 

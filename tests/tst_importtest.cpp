@@ -1,7 +1,8 @@
 #include <QString>
 #include "tst_importtest.h"
-#include "TcxDataSource.h"
-#include "Activity.h"
+
+#include "../gpsdata/Activity.h"
+#include "../gpsdata/TcxDataSource.h"
 
 
 

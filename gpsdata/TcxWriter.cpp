@@ -5,7 +5,7 @@
  *      Author: hornja
  */
 
-#include "TcxWriter.h"
+#include "../gpsdata/TcxWriter.h"
 
 TcxWriter::TcxWriter() {
     // TODO Auto-generated constructor stub

@@ -1,13 +1,13 @@
 #ifndef SRC_H
 #define SRC_H
 
-#include "src_global.h"
 #include <QString>
 #include <QObject>
 
+
 class Activity;
 
-class SRCSHARED_EXPORT IDataSource : public QObject
+class IDataSource : public QObject
 {
     Q_OBJECT
 

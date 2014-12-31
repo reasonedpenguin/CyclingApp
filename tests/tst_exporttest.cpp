@@ -1,8 +1,9 @@
 #include <QString>
 #include "tst_exporttest.h"
-#include "TcxDataSource.h"
-#include "Activity.h"
-#include "TcxWriter.h"
+
+#include "../gpsdata/Activity.h"
+#include "../gpsdata/TcxDataSource.h"
+#include "../gpsdata/TcxWriter.h"
 
 
 ExportTest::ExportTest()

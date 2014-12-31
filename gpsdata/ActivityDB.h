@@ -9,10 +9,10 @@
 #define ACTIVITYDB_H_
 
 #include <stdint.h>
-#include "Activity.h"
 #include <QSqlDatabase>
 #include <QList>
 #include <QDir>
+#include "../gpsdata/Activity.h"
 
 class ActivityDB {
 public:

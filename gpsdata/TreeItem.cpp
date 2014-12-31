@@ -5,7 +5,8 @@
  *      Author: hornja
  */
 
-#include "TreeItem.h"
+#include "../gpsdata/TreeItem.h"
+
 #include <QtAlgorithms>
 
 

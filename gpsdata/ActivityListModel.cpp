@@ -5,10 +5,12 @@
  *      Author: hornja
  */
 
+#include "../gpsdata/ActivityListModel.h"
+
 #include <QStringList>
-#include "ActivityListModel.h"
-#include "ActivityDB.h"
-#include "ActivityItem.h"
+
+#include "../gpsdata/ActivityDB.h"
+#include "../gpsdata/ActivityItem.h"
 
 ActivityListModel::ActivityListModel(QObject* parent) : QAbstractItemModel(parent) {
     QList<QVariant> rootData;

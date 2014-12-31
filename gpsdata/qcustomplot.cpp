@@ -23,7 +23,7 @@
 **          Version: 1.2.1                                                **
 ****************************************************************************/
 
-#include "qcustomplot.h"
+#include "../gpsdata/qcustomplot.h"
 
 
 

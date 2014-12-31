@@ -1,6 +1,6 @@
-PROJECT(src)
+PROJECT(gpsdata)
 
-SET(src_SOURCES  Activity.cpp
+SET(gpsdata_SOURCES  Activity.cpp
     ActivityDB.cpp
     ActivityItem.cpp
     ActivityListModel.cpp
@@ -13,11 +13,10 @@ SET(src_SOURCES  Activity.cpp
     TreeItem.cpp
     qcustomplot.cpp)
     
-SET(src_HEADERS Activity.h
+SET(gpsdata_HEADERS Activity.h
     ActivityDB.h
     ActivityItem.h
     ActivityListModel.h
-    src_global.h
     GpsPosition.h
     IDataSource.h
     Lap.h
@@ -28,12 +27,12 @@ SET(src_HEADERS Activity.h
     
 
 
-QT4_WRAP_CPP(src_HEADERS_MOC ${src_HEADERS})
-QT4_WRAP_UI(src_FORMS_HEADERS ${src_FORMS})
-QT4_ADD_RESOURCES(src_RESOURCES_RCC ${src_RESOURCES})
+QT4_WRAP_CPP(gpsdata_HEADERS_MOC ${gpsdata_HEADERS})
+QT4_WRAP_UI(gpsdata_FORMS_HEADERS ${gpsdata_FORMS})
+QT4_ADD_RESOURCES(gpsdata_RESOURCES_RCC ${gpsdata_RESOURCES})
 
 
-ADD_LIBRARY(src ${src_SOURCES} 
-    ${src_HEADERS_MOC}
-    ${src_FORMS_HEADERS} 
-    ${src_RESOURCES_RCC})
+ADD_LIBRARY(gpsdata ${gpsdata_SOURCES} 
+    ${gpsdata_HEADERS_MOC}
+    ${gpsdata_FORMS_HEADERS} 
+    ${gpsdata_RESOURCES_RCC})

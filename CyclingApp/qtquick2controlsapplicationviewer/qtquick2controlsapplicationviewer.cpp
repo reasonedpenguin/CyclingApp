@@ -6,8 +6,7 @@
   It is recommended not to modify this file, since newer versions of Qt Creator
   may offer an updated version of it.
 */
-#include "qtquick2controlsapplicationviewer.h"
-
+#include "../../CyclingApp/qtquick2controlsapplicationviewer/qtquick2controlsapplicationviewer.h"
 #include <QCoreApplication>
 #include <QDir>
 #include <QQmlComponent>

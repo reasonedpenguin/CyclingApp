@@ -10,8 +10,9 @@
 
 #include <QModelIndex>
 #include <QAbstractItemModel>
-#include "TreeItem.h"
-#include "Activity.h"
+
+#include "../gpsdata/Activity.h"
+#include "../gpsdata/TreeItem.h"
 
 
 class ActivityDB;

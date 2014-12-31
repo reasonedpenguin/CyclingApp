@@ -3,7 +3,8 @@
 
 #include <QString>
 #include <QList>
-#include "Trackpoint.h"
+
+#include "../gpsdata/Trackpoint.h"
 
 
 class Lap

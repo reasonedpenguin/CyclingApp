@@ -5,7 +5,8 @@
  *      Author: hornja
  */
 
-#include "ActivityDB.h"
+#include "../gpsdata/ActivityDB.h"
+
 #include <QtGlobal>
 #include <QDir>
 #include <QSqlQuery>

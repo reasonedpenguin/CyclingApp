@@ -8,7 +8,7 @@
 #ifndef TCXWRITER_H_
 #define TCXWRITER_H_
 
-#include "Activity.h"
+#include "../gpsdata/Activity.h"
 
 class TcxWriter {
 public:

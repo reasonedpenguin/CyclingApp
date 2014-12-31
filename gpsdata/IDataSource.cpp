@@ -1,8 +1,9 @@
-#include "IDataSource.h"
-#include "TcxDataSource.h"
+#include "../gpsdata/IDataSource.h"
+
 #include <stdexcept>
 #include <QFileInfo>
 #include <QtDebug>
+#include "../gpsdata/TcxDataSource.h"
 
 IDataSource::IDataSource()
 {

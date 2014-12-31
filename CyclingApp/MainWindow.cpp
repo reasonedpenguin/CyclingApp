@@ -5,14 +5,14 @@
  *      Author: hornja
  */
 
+#include "../CyclingApp/MainWindow.h"
+
 #include <QtDebug>
 #include <QFileDialog>
 //#include <QStandardPaths>
 #include <QDesktopServices>
-#include "MainWindow.h"
-#include "ActivityListModel.h"
-#include "IDataSource.h"
-
+#include "../gpsdata/ActivityListModel.h"
+#include "../gpsdata/IDataSource.h"
 #include "ui_MainWindowBase.h"
 
 MainWindow::MainWindow() : QMainWindow(),

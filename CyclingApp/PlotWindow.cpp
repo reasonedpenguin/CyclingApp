@@ -5,7 +5,8 @@
  *      Author: hornja
  */
 
-#include "PlotWindow.h"
+#include "../CyclingApp/PlotWindow.h"
+
 #include "ui_PlotWindowBase.h"
 
 PlotWindow::PlotWindow(QWidget* parent, Qt::WindowFlags f) : QWidget(parent,f) {

@@ -3,7 +3,8 @@
 
 #include <QString>
 #include <QVector>
-#include "Lap.h"
+
+#include "../gpsdata/Lap.h"
 
 
 class Activity

@@ -5,7 +5,7 @@
  *      Author: hornja
  */
 
-#include "ActivityItem.h"
+#include "../gpsdata/ActivityItem.h"
 
 
 ActivityItem::ActivityItem(const Activity& a) :

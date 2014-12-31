@@ -1,7 +1,8 @@
 #include <QString>
 #include <QtTest>
-#include "TcxDataSource.h"
-#include "Activity.h"
+
+#include "../gpsdata/Activity.h"
+#include "../gpsdata/TcxDataSource.h"
 
 class ImportTest : public QObject
 {

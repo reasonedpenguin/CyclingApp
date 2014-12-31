@@ -21,4 +21,4 @@ ADD_EXECUTABLE(CyclingApp ${app_SOURCES}
     ${app_FORMS_HEADERS} 
     ${app_RESOURCES_RCC})
     
-TARGET_LINK_LIBRARIES(CyclingApp src ${QT_LIBRARIES})
+TARGET_LINK_LIBRARIES(CyclingApp gpsdata ${QT_LIBRARIES})
