@@ -14,13 +14,22 @@
    <string>CyclingApp</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="verticalLayout_4">
     <item>
      <widget class="QSplitter" name="splitter">
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
-      <widget class="QListView" name="activityView"/>
+      <widget class="QWidget" name="">
+       <layout class="QVBoxLayout" name="verticalLayout">
+        <item>
+         <widget class="SearchWidget" name="widget_2" native="true"/>
+        </item>
+        <item>
+         <widget class="QListView" name="activityView"/>
+        </item>
+       </layout>
+      </widget>
       <widget class="QWidget" name="widget" native="true">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -39,8 +48,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>603</width>
-             <height>438</height>
+             <width>599</width>
+             <height>434</height>
             </rect>
            </property>
            <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -63,7 +72,7 @@
      <x>0</x>
      <y>0</y>
      <width>901</width>
-     <height>20</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -110,6 +119,12 @@
    <class>PlotWindow</class>
    <extends>QWidget</extends>
    <header>PlotWindow.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>SearchWidget</class>
+   <extends>QWidget</extends>
+   <header>SearchWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

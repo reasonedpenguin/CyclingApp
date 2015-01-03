@@ -8,155 +8,209 @@ Activity::Activity() :
 {
 }
 
-bool Activity::isNull()
+bool Activity::isNull() const
 {
-    return m_name.isNull();
+    return m_title.isNull();
 }
 
-int64_t Activity::id() const {
-    return m_id;
-}
+//QVector<Lap> & Activity::laps()
+//{
+//    return m_laps;
+//}
+//
 
-void Activity::setId(int64_t id) {
-    m_id = id;
-}
-
-QString Activity::name() const
-{
-    return m_name;
-}
-
-void Activity::setName(const QString &nameStr)
-{
-    m_name = nameStr;
-}
-
-
-QString Activity::creator() const
-{
-    return m_creator;
-}
-
-void Activity::setCreator(const QString &creator)
-{
-    m_creator = creator;
-}
-double Activity::totalTime() const
-{
-    return m_totalTime;
-}
-
-void Activity::setTotalTime(double totalTime)
-{
-    m_totalTime = totalTime;
-}
-double Activity::distance() const
-{
-        return m_distance;
-}
-
-void Activity::setDistance(double distance)
-{
-    m_distance = distance;
-}
-double Activity::maxSpeed() const
-{
-    return m_maxSpeed;
-}
-
-void Activity::setMaxSpeed(double maxSpeed)
-{
-    m_maxSpeed = maxSpeed;
-}
-int Activity::calories() const
-{
-    return m_calories;
-}
-
-void Activity::setCalories(int calories)
-{
-    m_calories = calories;
-}
-int Activity::averageHeartRate() const
-{
-    return m_averageHeartRate;
-}
-
-void Activity::setAverageHeartRate(int averageHeartRate)
-{
-    m_averageHeartRate = averageHeartRate;
-}
-int Activity::maxHeartRate() const
-{
-    return m_maxHeartRate;
-}
-
-void Activity::setMaxHeartRate(int maxHeartRate)
-{
-    m_maxHeartRate = maxHeartRate;
-}
-int Activity::cadence() const
-{
-    return m_cadence;
-}
-
-void Activity::setCadence(int cadence)
-{
-    m_cadence = cadence;
-}
-QVector<Lap> & Activity::laps()
-{
-    return m_laps;
-}
-
+// TODO: the summing here might just be a TCX file thing.
 void Activity::setLaps(const QVector<Lap> &laps)
 {
     m_laps = laps;
     m_distance = 0;
     for(int i=0;i<m_laps.size();++i) {
-        m_distance += m_laps[i].distance();
+        m_distance += m_laps[i].getDistance();
     }
 
-    m_totalTime = 0;
+    m_duration = 0;
     for(int i=0;i<m_laps.size();++i) {
-        m_totalTime += m_laps[i].totalTime();
+        m_duration += m_laps[i].getDuration();
     }
 
     m_maxSpeed = 0;
     for(int i=0;i<m_laps.size();++i) {
-        m_maxSpeed = fmax(m_laps[i].maxSpeed(),m_maxSpeed);
+        m_maxSpeed = fmax(m_laps[i].getMaxSpeed(),m_maxSpeed);
     }
 
     m_calories = 0;
     for(int i=0;i<m_laps.size();++i) {
-        m_calories += m_laps[i].calories();
+        m_calories += m_laps[i].getCalories();
     }
 
-    m_averageHeartRate = 0;
+    m_avgHeartRate = 0;
     for(int i=0;i<m_laps.size();++i) {
-        m_averageHeartRate += m_laps[i].totalTime()/m_totalTime * m_laps[i].avgHR();
+        m_avgHeartRate += m_laps[i].getDuration()/m_duration * m_laps[i].getAvgHeartRate();
     }
 
     m_maxHeartRate = 0;
     for(int i=0;i<m_laps.size();++i) {
-        m_maxHeartRate = fmax(m_laps[i].maxHR(),m_maxHeartRate);
+        m_maxHeartRate = fmax(m_laps[i].getMaxHeartRate(),m_maxHeartRate);
     }
 }
-QString Activity::sport() const
-{
-    return m_sport;
-}
-
-void Activity::setSport(const QString &sport)
-{
-    m_sport = sport;
-}
-
-QString Activity::dataFile() const {
-    return m_dataFile;
-}
 
 
-void Activity::setDataFile(const QString& dataFile) {
-    m_dataFile = dataFile;
+qint64 Activity::getAthleteId() const {
+    return m_athleteId;
 }
+
+void Activity::setAthleteId(qint64 athleteId) {
+    m_athleteId = athleteId;
+}
+
+double Activity::getAvgCadence() const {
+    return m_avgCadence;
+}
+
+void Activity::setAvgCadence(double avgCadence) {
+    m_avgCadence = avgCadence;
+}
+
+double Activity::getAvgHeartRate() const {
+    return m_avgHeartRate;
+}
+
+void Activity::setAvgHeartRate(double avgHeartRate) {
+    m_avgHeartRate = avgHeartRate;
+}
+
+double Activity::getAvgSpeed() const {
+    return m_avgSpeed;
+}
+
+void Activity::setAvgSpeed(double avgSpeed) {
+    m_avgSpeed = avgSpeed;
+}
+
+int Activity::getCalories() const {
+    return m_calories;
+}
+
+void Activity::setCalories(int calories) {
+    m_calories = calories;
+}
+
+const QString& Activity::getComments() const {
+    return m_comments;
+}
+
+void Activity::setComments(const QString& comments) {
+    m_comments = comments;
+}
+
+double Activity::getDistance() const {
+    return m_distance;
+}
+
+void Activity::setDistance(double distance) {
+    m_distance = distance;
+}
+
+double Activity::getDuration() const {
+    return m_duration;
+}
+
+void Activity::setDuration(double duration) {
+    m_duration = duration;
+}
+
+double Activity::getElevGain() const {
+    return m_elevGain;
+}
+
+void Activity::setElevGain(double elevGain) {
+    m_elevGain = elevGain;
+}
+
+double Activity::getElevLoss() const {
+    return m_elevLoss;
+}
+
+void Activity::setElevLoss(double elevLoss) {
+    m_elevLoss = elevLoss;
+}
+
+qint64 Activity::getId() const {
+    return m_id;
+}
+
+void Activity::setId(qint64 id) {
+    m_id = id;
+}
+
+double Activity::getMaxCadence() const {
+    return m_maxCadence;
+}
+
+void Activity::setMaxCadence(double maxCadence) {
+    m_maxCadence = maxCadence;
+}
+
+double Activity::getMaxHeartRate() const {
+    return m_maxHeartRate;
+}
+
+void Activity::setMaxHeartRate(double maxHeartRate) {
+    m_maxHeartRate = maxHeartRate;
+}
+
+double Activity::getMaxSpeed() const {
+    return m_maxSpeed;
+}
+
+void Activity::setMaxSpeed(double maxSpeed) {
+    m_maxSpeed = maxSpeed;
+}
+
+const QImage& Activity::getPreview() const {
+    return m_preview;
+}
+
+void Activity::setPreview(const QImage& preview) {
+    m_preview = preview;
+}
+
+qint64 Activity::getSportId() const {
+    return m_sportId;
+}
+
+void Activity::setSportId(qint64 sportId) {
+    m_sportId = sportId;
+}
+
+const QDateTime& Activity::getStartTime() const {
+    return m_startTime;
+}
+
+void Activity::setStartTime(const QDateTime& startTime) {
+    m_startTime = startTime;
+}
+
+double Activity::getStopped() const {
+    return m_stopped;
+}
+
+void Activity::setStopped(double stopped) {
+    m_stopped = stopped;
+}
+
+const QString& Activity::getTitle() const {
+    return m_title;
+}
+
+void Activity::setTitle(const QString& title) {
+    m_title = title;
+}
+
+const QVector<Lap>& Activity::getLaps() const {
+    return m_laps;
+}
+
+//void Activity::setLaps(const QVector<Lap>& laps) {
+//    m_laps = laps;
+//}

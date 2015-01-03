@@ -52,48 +52,67 @@
 			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 		<cconfiguration id="0.1853174417.1726008844">
-			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1853174417.1726008844" moduleId="org.eclipse.cdt.core.settings" name="qt4">
+			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="0.1853174417.1726008844" moduleId="org.eclipse.cdt.core.settings" name="qt4 Debug">
 				<externalSettings/>
 				<extensions>
-					<extension id="org.eclipse.cdt.core.VCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GmakeErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.CWDLocator" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
 					<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+					<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
 				</extensions>
 			</storageModule>
 			<storageModule moduleId="cdtBuildSystem" version="4.0.0">
-				<configuration artifactName="CyclingApp" buildProperties="" description="" id="0.1853174417.1726008844" name="qt4" parent="org.eclipse.cdt.build.core.prefbase.cfg">
+				<configuration artifactName="CyclingApp" buildProperties="" description="" id="0.1853174417.1726008844" name="qt4 Debug" parent="org.eclipse.cdt.build.core.prefbase.cfg">
 					<folderInfo id="0.1853174417.1726008844." name="/" resourcePath="">
-						<toolChain id="org.eclipse.cdt.build.core.prefbase.toolchain.489610291" name="No ToolChain" resourceTypeBasedDiscovery="false" superClass="org.eclipse.cdt.build.core.prefbase.toolchain">
-							<targetPlatform id="org.eclipse.cdt.build.core.prefbase.toolchain.489610291.998684726" name=""/>
-							<builder buildPath="/home/jason/workspace/build-CyclingApp-Desktop_Qt_4_GCC_64bit-Debug" id="org.eclipse.cdt.build.core.settings.default.builder.1080170309" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="org.eclipse.cdt.build.core.settings.default.builder"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.libs.1246426549" name="holder for library settings" superClass="org.eclipse.cdt.build.core.settings.holder.libs"/>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1674241467" name="Assembly" superClass="org.eclipse.cdt.build.core.settings.holder">
-								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.1216364918" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
+						<toolChain id="cdt.managedbuild.toolchain.gnu.base.1370736683" name="Linux GCC" superClass="cdt.managedbuild.toolchain.gnu.base">
+							<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="cdt.managedbuild.target.gnu.platform.base.169651057" name="Debug Platform" osList="linux,hpux,aix,qnx" superClass="cdt.managedbuild.target.gnu.platform.base"/>
+							<builder buildPath="/home/jason/workspace/build-CyclingApp-Desktop_Qt_4_GCC_64bit-Debug" id="cdt.managedbuild.target.gnu.builder.base.485027488" keepEnvironmentInBuildfile="false" managedBuildOn="false" name="Gnu Make Builder" parallelBuildOn="true" parallelizationNumber="optimal" superClass="cdt.managedbuild.target.gnu.builder.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.archiver.base.18982996" name="GCC Archiver" superClass="cdt.managedbuild.tool.gnu.archiver.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.compiler.base.1256954422" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.base">
+								<option id="gnu.cpp.compiler.option.include.paths.1800281758" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtGui"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtCore"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtXml"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtSql"/>
+									<listOptionValue builtIn="false" value="/home/jason/workspace/build-CyclingApp-Desktop_Qt_4_GCC_64bit-Debug/widgets"/>
+									<listOptionValue builtIn="false" value="/home/jason/workspace/build-CyclingApp-Desktop_Qt_4_GCC_64bit-Debug/gpsdata"/>
 								</option>
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.348933084" languageId="org.eclipse.cdt.core.assembly" languageName="Assembly" sourceContentType="org.eclipse.cdt.core.asmSource" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1515491343" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols">
+									<listOptionValue builtIn="false" value="Q_SLOTS"/>
+									<listOptionValue builtIn="false" value="Q_OBJECT"/>
+									<listOptionValue builtIn="false" value="Q_SIGNALS=public"/>
+									<listOptionValue builtIn="false" value="SIGNAL(a)=sallala"/>
+									<listOptionValue builtIn="false" value="SLOT(a)=sallala"/>
+									<listOptionValue builtIn="false" value="Q_CORE_EXPORT"/>
+									<listOptionValue builtIn="false" value="Q_NETWORK_EXPORT"/>
+									<listOptionValue builtIn="false" value="Q_DISABLE_COPY(a)=public:"/>
+									<listOptionValue builtIn="false" value="signals=public"/>
+									<listOptionValue builtIn="false" value="slots"/>
+								</option>
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.655178225" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1383648102" name="GNU C++" superClass="org.eclipse.cdt.build.core.settings.holder">
-								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.776117370" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtNetwork"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtXml"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtSql"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtWebKit"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.compiler.base.1645303721" name="GCC C Compiler" superClass="cdt.managedbuild.tool.gnu.c.compiler.base">
+								<option id="gnu.c.compiler.option.include.paths.2121337459" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtGui"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtCore"/>
 								</option>
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.336526051" languageId="org.eclipse.cdt.core.g++" languageName="GNU C++" sourceContentType="org.eclipse.cdt.core.cxxSource,org.eclipse.cdt.core.cxxHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.138133913" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
-							<tool id="org.eclipse.cdt.build.core.settings.holder.1411485374" name="GNU C" superClass="org.eclipse.cdt.build.core.settings.holder">
-								<option id="org.eclipse.cdt.build.core.settings.holder.incpaths.557181100" name="Include Paths" superClass="org.eclipse.cdt.build.core.settings.holder.incpaths" valueType="includePath">
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtCore"/>
-									<listOptionValue builtIn="false" value="/home/hornja/Tools/Qt5.2.1/5.2.1/gcc_64/include/QtGui"/>
+							<tool id="cdt.managedbuild.tool.gnu.c.linker.base.305446329" name="GCC C Linker" superClass="cdt.managedbuild.tool.gnu.c.linker.base"/>
+							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.base.31535261" name="GCC C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.base">
+								<inputType id="cdt.managedbuild.tool.gnu.cpp.linker.input.1113372210" superClass="cdt.managedbuild.tool.gnu.cpp.linker.input">
+									<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+									<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+								</inputType>
+							</tool>
+							<tool id="cdt.managedbuild.tool.gnu.assembler.base.1747001815" name="GCC Assembler" superClass="cdt.managedbuild.tool.gnu.assembler.base">
+								<option id="gnu.both.asm.option.include.paths.257544744" name="Include paths (-I)" superClass="gnu.both.asm.option.include.paths" valueType="includePath">
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtGui"/>
+									<listOptionValue builtIn="false" value="/usr/include/qt4/QtCore"/>
 								</option>
-								<inputType id="org.eclipse.cdt.build.core.settings.holder.inType.1091444218" languageId="org.eclipse.cdt.core.gcc" languageName="GNU C" sourceContentType="org.eclipse.cdt.core.cSource,org.eclipse.cdt.core.cHeader" superClass="org.eclipse.cdt.build.core.settings.holder.inType"/>
+								<inputType id="cdt.managedbuild.tool.gnu.assembler.input.1224725715" superClass="cdt.managedbuild.tool.gnu.assembler.input"/>
 							</tool>
 						</toolChain>
 					</folderInfo>
@@ -120,11 +139,18 @@
 	</storageModule>
 	<storageModule moduleId="scannerConfiguration">
 		<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		<scannerConfigBuildInfo instanceId="0.1853174417.1726008844;0.1853174417.1726008844.;cdt.managedbuild.tool.gnu.c.compiler.base.1645303721;cdt.managedbuild.tool.gnu.c.compiler.input.138133913">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="0.1853174417.1726008844">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
 		<scannerConfigBuildInfo instanceId="0.1853174417">
 			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
 		</scannerConfigBuildInfo>
+		<scannerConfigBuildInfo instanceId="0.1853174417.1726008844;0.1853174417.1726008844.;cdt.managedbuild.tool.gnu.cpp.compiler.base.1256954422;cdt.managedbuild.tool.gnu.cpp.compiler.input.655178225">
+			<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
+		</scannerConfigBuildInfo>
 	</storageModule>
+	<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
 </cproject>

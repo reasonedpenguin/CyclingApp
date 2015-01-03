@@ -16,7 +16,7 @@
 
 
 class ActivityDB;
-
+class ActivityItem;
 
 class ActivityListModel : public QAbstractItemModel {
 public:
@@ -38,8 +38,15 @@ public:
     int columnCount(const QModelIndex &parent = QModelIndex()) const;
 
     void addActivity(Activity a,const QModelIndex &parent = QModelIndex());
+
+    Activity getActivity(const QModelIndex& index);
+
 private:
     void setupModelData( TreeItem *parent);
+
+    TreeItem *nodeFromIndex(const QModelIndex& index) const;
+
+    void loadActivity(ActivityItem * item);
 
     TreeItem *rootItem;
     ActivityDB* m_db;

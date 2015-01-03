@@ -22,7 +22,8 @@ MainWindow::MainWindow() : QMainWindow(),
     ui->setupUi(this);
 
     connect(ui->actionImport, SIGNAL(triggered()),this,SLOT(importTriggered()));
-
+    connect(ui->activityView, SIGNAL(clicked(const QModelIndex&)),
+            this,SLOT(activitySelected(const QModelIndex&)));
     m_activityModel = new ActivityListModel();
     ui->activityView->setModel(m_activityModel);
 //    QString dataDir = QStandardPaths::writableLocation(QStandardPaths::DataLocation);
@@ -51,4 +52,16 @@ void MainWindow::importTriggered() {
                 m_activityModel->addActivity(a);
         }
     }
+}
+
+void MainWindow::activitySelected(const QModelIndex& index) {
+//    QModelIndexList indexes = selected.indexes();
+//    for(int i=0;i<indexes.size();i++) {
+//        QModelIndex index = indexes.at(i);
+        if(index.column() == 0) {
+            Activity a = m_activityModel->getActivity(index);
+            if(!a.isNull())
+                ui->plotWindow->setActivity(a);
+        }
+//    }
 }

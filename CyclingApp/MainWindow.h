@@ -12,6 +12,7 @@
 
 class QFileDialog;
 class ActivityListModel;
+class QModelIndex;
 
 namespace Ui {
 class MainWindowBase;
@@ -25,7 +26,7 @@ public:
 
 public slots:
     void importTriggered();
-
+    void activitySelected(const QModelIndex& index);
 private:
     Ui::MainWindowBase* ui;
     QFileDialog* m_fileDialog;

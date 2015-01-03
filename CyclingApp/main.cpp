@@ -31,6 +31,7 @@ int main(int argc, char *argv[])
     app.setOrganizationName("CyclingApp");
 //    app.setOrganizationDomain("company.net");
 
+    Q_INIT_RESOURCE(widgets);
     MainWindow mainWindow;
     mainWindow.show();
 

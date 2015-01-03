@@ -5,12 +5,13 @@
  *      Author: hornja
  */
 
-#include "../gpsdata/ActivityListModel.h"
+#include "ActivityListModel.h"
 
 #include <QStringList>
 
-#include "../gpsdata/ActivityDB.h"
-#include "../gpsdata/ActivityItem.h"
+#include "IDataSource.h"
+#include "ActivityDB.h"
+#include "ActivityItem.h"
 
 ActivityListModel::ActivityListModel(QObject* parent) : QAbstractItemModel(parent) {
     QList<QVariant> rootData;
@@ -103,11 +104,11 @@ int ActivityListModel::columnCount(const QModelIndex& parent) const {
 void ActivityListModel::setupModelData(TreeItem* parentItem) {
     m_db = new ActivityDB();
     QList<Activity> activityList = m_db->getAllActivities();
-    Activity test1,test2;
-    test1.setName("Test1");
-    test2.setName("Test2");
-    activityList.push_back(test1);
-    activityList.push_back(test2);
+//    Activity test1,test2;
+//    test1.setName("Test1");
+//    test2.setName("Test2");
+//    activityList.push_back(test1);
+//    activityList.push_back(test2);
     for(int i=0;i<activityList.size();i++) {
         TreeItem * childItem = new ActivityItem(activityList.value(i));
         parentItem->appendChild(childItem);
@@ -115,18 +116,44 @@ void ActivityListModel::setupModelData(TreeItem* parentItem) {
 
 }
 
-void ActivityListModel::addActivity(Activity a,const QModelIndex &parent) {
-    TreeItem *parentItem = static_cast<TreeItem*>(parent.internalPointer());
-    if(!parentItem) parentItem = rootItem;
-    int64_t id = m_db->addActivity(a);
-    if(id >= 0) {
-        int currentCount = rowCount(parent);
-        beginInsertRows(parent,currentCount,currentCount);
-        a.setId(id);
-        TreeItem * childItem = new ActivityItem(a);
-        parentItem->appendChild(childItem);
-        endInsertRows();
+TreeItem* ActivityListModel::nodeFromIndex(const QModelIndex& index) const {
+    if(index.isValid()) {
+        return static_cast<TreeItem*>(index.internalPointer());
+    } else {
+        return rootItem;
     }
 }
 
+void ActivityListModel::addActivity(Activity a,const QModelIndex &parent) {
+    TreeItem *parentItem = static_cast<TreeItem*>(parent.internalPointer());
+    if(!parentItem) parentItem = rootItem;
+    try {
+        qint64 id = m_db->insertActivity(a);
+        Activity newActivity = m_db->getActivity(id);
+        int currentCount = rowCount(parent);
+        beginInsertRows(parent,currentCount,currentCount);
+        TreeItem * childItem = new ActivityItem(newActivity);
+        parentItem->appendChild(childItem);
+        endInsertRows();
+    } catch(std::exception& e) {
+        // Error adding activity.
+    }
+}
+
+void ActivityListModel::loadActivity(ActivityItem * item) {
+//    Activity a = IDataSource::loadActivity(item->activity().dataFile());
+//    item->setActivity(a);
+    Activity a = m_db->getActivity(item->activity().getId());
+    item->setActivity(a);
+}
+
+Activity ActivityListModel::getActivity(const QModelIndex& index){
+    ActivityItem* item = static_cast<ActivityItem*>(nodeFromIndex(index));
+    if(item) {
+        loadActivity(item);
+        return item->activity();
+    } else {
+        return Activity();
+    }
+}
 

@@ -12,40 +12,57 @@ class Lap
 public:
     Lap();
 
-    bool isNull();
-
-    double totalTime() const;
-    void setTotalTime(double totalTime);
-
-    double distance() const;
-    void setDistance(double distance);
-
-    double maxSpeed() const;
-    void setMaxSpeed(double maxSpeed);
-
-    int calories() const;
+    bool isNull() const;
+    double getAvgCadence() const;
+    void setAvgCadence(double avgCadence);
+    double getAvgHeartRate() const;
+    void setAvgHeartRate(double avgHeartRate);
+    double getAvgSpeed() const;
+    void setAvgSpeed(double avgSpeed);
+    int getCalories() const;
     void setCalories(int calories);
-
-    int avgHR() const;
-    void setAvgHR(int avgHR);
-
-    int maxHR() const;
-    void setMaxHR(int maxHR);
-
-    int cadence() const;
-    void setCadence(int cadence);
-
-    QList<Trackpoint> trackpoints() const;
-    void setTrackpoints(const QList<Trackpoint> &trackpoints);
+    double getDistance() const;
+    void setDistance(double distance);
+    double getDuration() const;
+    void setDuration(double duration);
+    double getElevGain() const;
+    void setElevGain(double elevGain);
+    double getElevLoss() const;
+    void setElevLoss(double elevLoss);
+    int getLapNumber() const;
+    void setLapNumber(int lapNumber);
+    double getMaxCadence() const;
+    void setMaxCadence(double maxCadence);
+    double getMaxHeartRate() const;
+    void setMaxHeartRate(double maxHeartRate);
+    double getMaxSpeed() const;
+    void setMaxSpeed(double maxSpeed);
+    const QDateTime& getStartTime() const;
+    void setStartTime(const QDateTime& startTime);
+    double getStopped() const;
+    void setStopped(double stopped);
+    const QList<Trackpoint>& getTrackpoints() const;
+    void setTrackpoints(const QList<Trackpoint>& trackpoints);
+    int getId() const;
+    void setId(int id);
 
 private:
-    double m_totalTime;
+    int m_id;
+    int m_lapNumber;
+    QDateTime m_startTime;
     double m_distance;
+    double m_duration;
+    double m_stopped;
+    double m_avgHeartRate;
+    double m_maxHeartRate;
+    double m_avgSpeed;
     double m_maxSpeed;
+    double m_avgCadence;
+    double m_maxCadence;
+    double m_elevGain;
+    double m_elevLoss;
     int m_calories;
-    int m_avgHR;
-    int m_maxHR;
-    int m_cadence;
+
     QList<Trackpoint> m_trackpoints;
 };
 

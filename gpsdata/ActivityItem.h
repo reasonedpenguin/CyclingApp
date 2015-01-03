@@ -19,6 +19,8 @@ public:
     QVariant data(int column) const;
     int columnCount() const;
 
+    Activity activity();
+    void setActivity(const Activity & activity);
 private:
     Activity m_activity;
 
